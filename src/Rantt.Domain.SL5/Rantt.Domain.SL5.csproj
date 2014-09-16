@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC69FE3B-5254-4944-9DFD-FEACAF4A1780}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rantt.Domain</RootNamespace>
+    <AssemblyName>Rantt.Domain</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <NuGetPackageImportStamp>213ab648</NuGetPackageImportStamp>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\output\debug\SL5\Data\Rantt.Domain.SL5\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\output\debug\SL5\Data\Rantt.Domain.SL5\Rantt.Domain.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\output\release\SL5\Data\Rantt.Domain.SL5\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Catel.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Catel.Core.4.0.0-unstable0436\lib\sl50\Catel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Catel.Fody.Attributes, Version=2.3.0.0, Culture=neutral, PublicKeyToken=1c8163524cbe02e6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Catel.Fody.2.3.0-unstable0032\lib\portable-net4+sl4+wp7+win8+wpa81+MonoAndroid14+MonoTouch40\Catel.Fody.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\CsvHelper.2.7.0\lib\portable-sl4+wp71+windows8+net40\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Bcl.Async.1.0.168\lib\sl4\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Bcl.Async.1.0.168\lib\sl4\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Silverlight, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Bcl.Async.1.0.168\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.IO, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Bcl.1.1.8\lib\sl5\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Bcl.1.1.8\lib\sl5\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Bcl.1.1.8\lib\sl5\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Catel.MVVM.3.8\lib\sl50\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\lib\Catel.MVVM.3.8\lib\sl50\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\AttributeConfiguration.cs">
+      <Link>Configuration\AttributeConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\AttributeExtendedConfiguration.cs">
+      <Link>Configuration\AttributeExtendedConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\AttributeType.cs">
+      <Link>Configuration\AttributeType.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\CalendarStateConfiguration.cs">
+      <Link>Configuration\CalendarStateConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\CsvHelperConfiguration\AttributeConfigurationClassMap.cs">
+      <Link>Configuration\CsvHelperConfiguration\AttributeConfigurationClassMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\CsvHelperConfiguration\CalendarStateConfigurationClassMap.cs">
+      <Link>Configuration\CsvHelperConfiguration\CalendarStateConfigurationClassMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\CsvHelperConfiguration\ResourceConfigurationClassMap.cs">
+      <Link>Configuration\CsvHelperConfiguration\ResourceConfigurationClassMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\CustomColorConverter.cs">
+      <Link>Configuration\CustomColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\DataContracts\Extensions\DataContractsHelper.cs">
+      <Link>Configuration\DataContracts\Extensions\DataContractsHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\DataContracts\RawAttributeExtendedConfiguration.cs">
+      <Link>Configuration\DataContracts\RawAttributeExtendedConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\DataContracts\RawBaseAttributeConfiguration.cs">
+      <Link>Configuration\DataContracts\RawBaseAttributeConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\DataContracts\RawCalendarStateConfiguration.cs">
+      <Link>Configuration\DataContracts\RawCalendarStateConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\DataContracts\RawConfigurationData.cs">
+      <Link>Configuration\DataContracts\RawConfigurationData.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\DataContracts\RawResourceConfiguration.cs">
+      <Link>Configuration\DataContracts\RawResourceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\DataContracts\RawWorkspaceConfiguration.cs">
+      <Link>Configuration\DataContracts\RawWorkspaceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\EventArgs\AttributeConfigurationChangeEventArgs.cs">
+      <Link>Configuration\EventArgs\AttributeConfigurationChangeEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\EventArgs\CalendarStateChangeEventArgs.cs">
+      <Link>Configuration\EventArgs\CalendarStateChangeEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\EventArgs\ResourceConfigurationChangeEventArgs.cs">
+      <Link>Configuration\EventArgs\ResourceConfigurationChangeEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\Implementations\DesktopFolderMappingService.cs">
+      <Link>Configuration\Implementations\DesktopFolderMappingService.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\Interfaces\IFolderMappingService.cs">
+      <Link>Configuration\Interfaces\IFolderMappingService.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\RanttConfiguration.cs">
+      <Link>Configuration\RanttConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\ResourceConfiguration.cs">
+      <Link>Configuration\ResourceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\ValueColorPair.cs">
+      <Link>Configuration\ValueColorPair.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Configuration\WorkspaceConfiguration.cs">
+      <Link>Configuration\WorkspaceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\CrossPlatform.cs">
+      <Link>CrossPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\AttributeCollection.cs">
+      <Link>Entities\AttributeCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\AutoUpdateSettings.cs">
+      <Link>Entities\AutoUpdateSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\CalendarPeriod.cs">
+      <Link>Entities\CalendarPeriod.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\CalendarState.cs">
+      <Link>Entities\CalendarState.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\DataSetDescriptor.cs">
+      <Link>Entities\DataSetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\DataSource.cs">
+      <Link>Entities\DataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\DataSourceType.cs">
+      <Link>Entities\DataSourceType.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\DateRepresentation.cs">
+      <Link>Entities\DateRepresentation.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\FieldMapping.cs">
+      <Link>Entities\FieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\FixedFieldNames.cs">
+      <Link>Entities\FixedFieldNames.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\HotKeyDefinition.cs">
+      <Link>Entities\HotKeyDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\HotKeyMap.cs">
+      <Link>Entities\HotKeyMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\IntervalEntityType.cs">
+      <Link>Entities\IntervalEntityType.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\NamedAction.cs">
+      <Link>Entities\NamedAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\Operation.cs">
+      <Link>Entities\Operation.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\Project.cs">
+      <Link>Entities\Project.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\Relationship.cs">
+      <Link>Entities\Relationship.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\ShortTimeFormat.cs">
+      <Link>Entities\ShortTimeFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\StartupSettings.cs">
+      <Link>Entities\StartupSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\StartViewIntervalType.cs">
+      <Link>Entities\StartViewIntervalType.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Entities\UnitOfTime.cs">
+      <Link>Entities\UnitOfTime.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Exceptions\TypeConversionException.cs">
+      <Link>Exceptions\TypeConversionException.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\FontColor.cs">
+      <Link>FontColor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Helpers\ColorFromString.cs">
+      <Link>Helpers\ColorFromString.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Helpers\CRC32Implementation.cs">
+      <Link>Helpers\CRC32Implementation.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Helpers\ReferenceGenerator.cs">
+      <Link>Helpers\ReferenceGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Interfaces\IAttributeCollection.cs">
+      <Link>Interfaces\IAttributeCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Interfaces\ICalendarPeriod.cs">
+      <Link>Interfaces\ICalendarPeriod.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Interfaces\IDateTimePeriod.cs">
+      <Link>Interfaces\IDateTimePeriod.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Interfaces\IOperation.cs">
+      <Link>Interfaces\IOperation.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Interfaces\IRelationship.cs">
+      <Link>Interfaces\IRelationship.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\Interval.cs">
+      <Link>Interval.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\IntervalGridRow.cs">
+      <Link>IntervalGridRow.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\IntervalType.cs">
+      <Link>IntervalType.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\ModuleInitializer.cs">
+      <Link>ModuleInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\RanttDataSet.cs">
+      <Link>RanttDataSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\RawRanttData.cs">
+      <Link>RawRanttData.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\RawRanttDataSet.cs">
+      <Link>RawRanttDataSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Rantt.Domain.NET40\RelativeDurationEnum.cs">
+      <Link>RelativeDurationEnum.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\..\..\lib\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\lib\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\..\lib\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\..\lib\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="..\..\..\lib\Fody.1.24.0\build\Fody.targets" Condition="Exists('..\..\..\lib\Fody.1.24.0\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\lib\Fody.1.24.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\lib\Fody.1.24.0\build\Fody.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
